@@ -1,1 +1,1 @@
-print("Hello, my name is Kai.\n I am a filmmaker, \n but currently studying programming")
+print("Hello, my name is Kai.\nI'm a filmmaker\nbut I'm currently studying programming")
