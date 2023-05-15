@@ -86,11 +86,12 @@ if thirst > 6:
 elif thirst > 4:
     print("You are thirsty")
 
-if camel_tiredness > 8:
-    print("Your camel is dead...")
-    done = True
-elif camel_tiredness > 5:
-    print("Your camel is getting tired")
+if drinks_nr > 0:
+    drinks_nr -= 1
+    thirst = 0
+    print("You feel refreshed.")
+else:
+    print("Error 404 \nThere's no water")
 
 distance_between = miles_traveled - distance_natives_traveled
 if distance_between <= 0:
