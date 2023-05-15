@@ -12,7 +12,9 @@ print("The natives want their camel back and are chasing you down! Survive your"
 print("desert trek and out run the natives.")
 
 done = False
+
 while not done:
+    random_oasis = 0
     print("\nA. Drink from your canteen.")
     print("B. Ahead moderate speed.")
     print("C. Ahead full speed.")
@@ -21,6 +23,7 @@ while not done:
     print("Q. Quit.")
 
     user_choice = input("What is your choice? ")
+
     rand_native_distance = random.randrange(7, 14)
     rand_full_distance = random.randrange(10, 20)
     rand_moderate_distance = random.randrange(5, 12)
@@ -35,6 +38,7 @@ while not done:
         if drinks_nr > 0:
             drinks_nr -= 1
             thirst = 0
+            print("You feel refreshed.")
         else:
             print("Error 404 \nThere's no water")
 
@@ -45,6 +49,7 @@ while not done:
         thirst += 1
         camel_tiredness += 1
         distance_natives_traveled += rand_native_distance
+        random_oasis = random.randrange(20)
 
     elif user_choice.upper() == "C":
         # AHEAD FULL SPEED
@@ -53,6 +58,7 @@ while not done:
         thirst += 1
         camel_tiredness += random.randrange(1, 3)
         distance_natives_traveled += rand_native_distance
+        random_oasis = random.randrange(20)
 
     elif user_choice.upper() == "D":
         # STOP FOR THE NIGHT
@@ -67,15 +73,32 @@ while not done:
         print("The natives are " + str(miles_traveled - distance_natives_traveled) + " miles behind you")
         print("")
 
+random_oasis = random.randrange(1, 21)
+if random_oasis == 20:
+    drinks_nr = 3
+    thirst = 0
+    camel_tiredness = 0
+    print("You found an oasis")
 
-if thirst >= 4:
-    print("You are thirsty")
-elif thirst >= 6:
-    done = True
+if thirst > 6:
     print("Your camel died of thirst")
-
-if camel_tiredness >= 5:
-    print("Your camel is getting tired")
-elif camel_tiredness >= 8:
     done = True
-    print("")
+elif thirst > 4:
+    print("You are thirsty")
+
+if camel_tiredness > 8:
+    print("Your camel is dead...")
+    done = True
+elif camel_tiredness > 5:
+    print("Your camel is getting tired")
+
+distance_between = miles_traveled - distance_natives_traveled
+if distance_between <= 0:
+    print("The natives have caught you!")
+    done = True
+elif distance_between < 15:
+    print("The natives are getting close!")
+
+if miles_traveled >= 200 and not done:
+    done = True
+    print("Yay! You out ran the natives and won the game!")
