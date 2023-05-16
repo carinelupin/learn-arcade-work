@@ -79,5 +79,33 @@ for row in range(10):
     for column in range(row + 1):
         print(column, end=" ")
     print()
+    
+# PROBLEM 9:  (what?????  *****DO AGAIN*****)
+for row in range(10):
+    for column in range(row):
+        print(" ", end=" ")
+    for column in range(10 - row):
+        print(column, end=" ")
+    print()
+    
+for i in range(1, 10):
+    for j in range (1, 10):
+         # extra space
+         if i * j < 10:
+             print(" ", end=" ")
+             
+         print(i * j, end=" ")
 
+# PROBLEM 10: (I honestly don't know what's going on anymore, *****DO AGAIN*****)
+for i in range(1, 10):
+    for j in range(1, 10):
+        if i * j < 10:
+            print("", end=" ")
+
+        print(i * j, end=" ")
+    print()
 """
+
+# PROBLEM 11: (*****DO AGAIN*****)
+# PROBLEM 12: (*****DO AGAIN*****)
+# PROBLEM 13: (*****DO AGAIN*****)
