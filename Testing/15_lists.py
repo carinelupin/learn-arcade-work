@@ -59,7 +59,7 @@ Why want this limitation?
 Create an empty list:
 my_list = []
 
-Iterating (Looping) Through a List
+##### Iterating (Looping) Through a List
 1. for each loop:
   - this type of loop takes a collection of items, & loops code once per item
   - it will take a copy of item & store it in a variable for processing
@@ -90,6 +90,50 @@ for index in range(len(my_list)):
 Because we're working directly w the list elements, rather than a copy, the list can be modified
 for each loop doesn't allow modification of og list
 
-Looping w Both An Index & Element:
+##### Looping w Both An Index & Element:
+If you want both index (like for i in range) & element (for item in my_list)
 
+for index, value in enumerate(my_list):
+    print(index, value)
+
+
+##### Adding to a list
+new items can be added to a list (not tuple) by using append command
+
+E.g.
+my_list = [2, 4, 5, 6]
+my_list.append(9)
+print(my_list)  ----->  [2, 4, 5, 6, 9]
+
+##### Creating a list of nrs from user input
+
+my_list = []
+
+for i in range(5):
+    user_input = input("Enter an integer: ")
+    user_input = int(user_input)
+    my_list.append(user_input)
+    print(my_list)
+
+##### Create an array of specific length, all w same value
+
+my_list = [0] * 100
+
+##### Creating a running total of an array
+
+# Copy of array to sum
+my_list = [5, 76, 8, 5, 3, 3, 56, 5, 23]
+
+# Initial sum should be zero
+list_total = 0
+
+# Loop from 0 - nr of elements in array
+for index in range(len(my_list)):
+    # Add element 0, next 1, then 2, etc.
+    list_total += my_list[index]
+
+# Print result
+print(list_total)
+
+#####
 """
