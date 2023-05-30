@@ -45,7 +45,65 @@ i.e. __init__ method
 - bc like "my" it means someone different if said by different person
 
 ##### Objects
-////////
+//////// CREATING OBJECTS
+- class code defines a class but doesn't actually create an instance of one
+- code told computer what fields address has but don't have address yet
+- we can define a class w/out creating one
+ E.g.
+ def main():
+    #create address
+    home_address = Address()
+
+We need a variable that will point to our address.   E.g. home_address.
+We’ll set that variable equal to the new instance of the class we create.
+We create a new instance by using the name of the class (Address), followed by parentheses.
+This will “magically” call the __init__ method which will set up fields/attributes for the class.
+
+In this case, Address is a class. It defines what an address looks like.
+The home_address variable points to an object.
+An object is an instance of a class. It is the actual address.
+As another example, “Human” is a class, while “Samantha” and “Pete” are instances of the class.
+
+You can set the object’s attributes using the dot operator.
+First, use the variable that points to our object,
+   immediately follow that with a period, then the attribute name.
+
+E.g.
+def main():
+    # Create an address
+    home_address = Address()
+
+    # Set the fields in the address
+    home_address.name = "John Smith"
+    home_address.line1 = "701 N. C Street"
+    home_address.line2 = "Carver Science Building"
+    home_address.city = "Indianola"
+    home_address.state = "IA"
+    home_address.zip = "50125"
+
+A second variable can be created that points to a completely different instance of the Address class:
+
+    # Create another address
+    vacation_home_address = Address()
+
+    # Set the fields in the address
+    vacation_home_address.name = "John Smith"
+    vacation_home_address.line1 = "1122 Main Street"
+    vacation_home_address.line2 = ""
+    vacation_home_address.city = "Panama City Beach"
+    vacation_home_address.state = "FL"
+    vacation_home_address.zip = "32407"
+
+    print("The client's main home is in " + home_address.city)
+    print("His vacation home is in " + vacation_home_address.city)
+
+Attributes are not limited to being simple strings and numbers!
+If you have a class that represents a graph,
+   you can store all the data points in an attribute that is a list.
+Attributes can even be other objects.
+An object that represents a player character in an adventure could have
+   an attribute with another object that represents a magical hat.
+
 """
 
 # class E.g.
